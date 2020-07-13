@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/7/6
  */
 @SpringBootApplication
-@MapperScan(basePackages = "cn.ghostcloud.ghrapql.book.dao")
+@MapperScan(basePackages = "cn.ghostcloud.ghrapql.**.dao")
 public class StartApplication {
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
