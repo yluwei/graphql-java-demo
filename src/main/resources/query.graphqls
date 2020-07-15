@@ -1,18 +1,44 @@
 
 # 查询入口，一个项目只能有一个查询入口，也就是说包含Query类型的文件只能有一个，并且至少有一个
 type Query {
-    users(id: Int): [User]!
+    # 根据id查询用户
+    users(id: Int): User
 }
 
-type User{
-    id Int!
-    username String!
-    email String
-    role Role
+# 用户信息
+interface User{
+    # 用户id
+    id: Int!
+    # 用户名
+    username: String!
+    # 邮箱
+    email: String
+    # 用户角色
+    role: Role
+}
+
+#企业用户
+type Enterprise implements User{
+    id: Int!
+    username: String!
+    email: String
+    role: Role
+    creditCode: String
+    employees: Int
+}
+
+#个人用户
+type Person implements User{
+    id: Int!
+    username: String!
+    email: String
+    role: Role
+    idCard: String
+    age: Int
 }
 
 type Role{
-    id Int!
-    name String!
-    description String
+    id: Int!
+    name: String!
+    description: String
 }

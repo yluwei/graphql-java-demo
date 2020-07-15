@@ -5,9 +5,12 @@ import cn.ghostcloud.ghrapql.entity.Person;
 import cn.ghostcloud.ghrapql.entity.Role;
 import cn.ghostcloud.ghrapql.entity.User;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import com.coxautodev.graphql.tools.SchemaParserDictionary;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,8 +23,15 @@ import java.util.Map;
 @Service
 public class Query implements GraphQLQueryResolver {
 
-    public static Map<Integer, User> userMap;
-    public static Map<Integer, Role> roleMap;
+    public static Map<Integer, User> userMap = new HashMap<>();
+    public static Map<Integer, Role> roleMap = new HashMap<>();
+
+    @Bean
+    public SchemaParserDictionary schemaParserDictionary() {
+        return new SchemaParserDictionary()
+            .add(Enterprise.class)
+            .add(Person.class);
+    }
 
     @PostConstruct
     private void init() {
@@ -35,8 +45,8 @@ public class Query implements GraphQLQueryResolver {
         userMap.put(1, person);
         Enterprise ep = new Enterprise();
         ep.setId(2);
-        ep.setUsername("person001");
-        ep.setEmail("001@166.com");
+        ep.setUsername("企业001");
+        ep.setEmail("enterprise@166.com");
         ep.setRoleId(2);
         ep.setCreditCode("9125JKJ21256321523");
         ep.setEmployees(1001);
@@ -47,9 +57,9 @@ public class Query implements GraphQLQueryResolver {
         role.setDescription("一个合格的管理员");
         roleMap.put(1, role);
         Role role1 = new Role();
-        role.setId(2);
-        role.setName("企业管理员");
-        role.setDescription("负责企业日常工作");
+        role1.setId(2);
+        role1.setName("企业管理员");
+        role1.setDescription("负责企业日常工作");
         roleMap.put(2, role1);
     }
 

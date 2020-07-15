@@ -1,5 +1,6 @@
 package cn.ghostcloud.ghrapql.mutation;
 
+import cn.ghostcloud.ghrapql.entity.Person;
 import cn.ghostcloud.ghrapql.entity.User;
 import cn.ghostcloud.ghrapql.entity.UserInput;
 import cn.ghostcloud.ghrapql.query.Query;
@@ -15,12 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class Mutation implements GraphQLMutationResolver {
 
-    public Integer addUser(UserInput user) {
-        User user1 = new User();
+    public User addUser(UserInput user) {
+        Person user1 = new Person();
         user1.setId(3);
         user1.setUsername(user.getUsername());
         user1.setEmail(user.getEmail());
         Query.userMap.put(3, user1);
-        return user1.getId();
+        return user1;
     }
 }
