@@ -1,5 +1,18 @@
 
 # 查询入口，一个项目只能有一个查询入口，也就是说包含Query类型的文件只能有一个，并且至少有一个
 type Query {
-    recentPosts(count: Int, offset: Int): [Post]!
+    users(id: Int): [User]!
+}
+
+type User{
+    id Int!
+    username String!
+    email String
+    role Role
+}
+
+type Role{
+    id Int!
+    name String!
+    description String
 }

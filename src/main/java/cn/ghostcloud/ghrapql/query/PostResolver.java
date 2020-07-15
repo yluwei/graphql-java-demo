@@ -1,8 +1,8 @@
-package cn.ghostcloud.ghrapql.blog.query;
+package cn.ghostcloud.ghrapql.query;
 
-import cn.ghostcloud.ghrapql.blog.dao.AuthorDao;
-import cn.ghostcloud.ghrapql.blog.entity.Author;
-import cn.ghostcloud.ghrapql.blog.entity.Post;
+import cn.ghostcloud.ghrapql.dao.AuthorDao;
+import cn.ghostcloud.ghrapql.entity.Author;
+import cn.ghostcloud.ghrapql.entity.Post;
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
