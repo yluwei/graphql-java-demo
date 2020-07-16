@@ -1,6 +1,8 @@
 
 # 查询入口，一个项目只能有一个查询入口，也就是说包含Query类型的文件只能有一个，并且至少有一个
 type Query {
+    # 查询角色列表
+    role(id: Int): [Role]
     # 根据id查询用户
     users(id: Int): User
 }

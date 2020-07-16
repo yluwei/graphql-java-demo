@@ -6,10 +6,13 @@ import cn.ghostcloud.ghrapql.entity.Role;
 import cn.ghostcloud.ghrapql.entity.User;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.coxautodev.graphql.tools.SchemaParserDictionary;
+import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,5 +79,12 @@ public class Query implements GraphQLQueryResolver {
      */
     public User users(Integer id) {
         return userMap.get(id);
+    }
+
+    public List<Role> role(Integer id) {
+        if (id == null) {
+            return new ArrayList<>(roleMap.values());
+        }
+        return Lists.newArrayList(roleMap.get(id));
     }
 }
