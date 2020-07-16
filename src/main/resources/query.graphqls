@@ -43,4 +43,11 @@ type Role{
     id: Int!
     name: String!
     description: String
+    roleTypeName: RoleType
+}
+
+enum RoleType{
+    FINANCING
+    GOV
+    THIRD
 }
