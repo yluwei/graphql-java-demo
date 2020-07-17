@@ -2,7 +2,6 @@ package cn.ghostcloud.ghrapql.common;
 
 import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
-import graphql.servlet.GenericGraphQLError;
 import graphql.servlet.GraphQLErrorHandler;
 import org.springframework.stereotype.Component;
 
@@ -26,9 +25,9 @@ public class AppExceptionHandler implements GraphQLErrorHandler {
         if (error instanceof ExceptionWhileDataFetching) {
             ExceptionWhileDataFetching exceptionError = (ExceptionWhileDataFetching) error;
             if (exceptionError.getException() instanceof GraphQLError) {
-                return new GenericGraphQLError(exceptionError.getException().getMessage());
+                return (GraphQLError) exceptionError.getException();
             } else {
-                return new GenericGraphQLError("系统异常，请稍后重试");
+                return new AppException("系统异常，请稍后重试", 500);
             }
         }
         return error;
