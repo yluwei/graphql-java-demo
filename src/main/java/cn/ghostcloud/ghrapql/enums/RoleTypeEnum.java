@@ -10,7 +10,13 @@ public enum RoleTypeEnum {
     /**
      * 角色类型
      */
-    FINANCING,
-    GOV,
-    THIRD;
-}
+    FINANCING(1, "金融"),
+    GOV(2, "政府"),
+    THIRD(3, "合作企业");
+    private Integer code;
+    private String name;
+
+    RoleTypeEnum(Integer code, String name) {
+        this.code = code;
+        this.name = name;
+    }}

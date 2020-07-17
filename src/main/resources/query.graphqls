@@ -41,7 +41,7 @@ type Person implements User{
 
 type Role{
     id: Int!
-    name: String!
+    name: String! @deprecated
     description: String
     roleTypeName: RoleType
 }

@@ -1,8 +1,8 @@
 package cn.ghostcloud.ghrapql.query;
 
+import cn.ghostcloud.ghrapql.common.AppException;
 import cn.ghostcloud.ghrapql.entity.Enterprise;
 import cn.ghostcloud.ghrapql.entity.Role;
-import cn.ghostcloud.ghrapql.entity.User;
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,7 @@ public class EnterpriseResolver implements GraphQLResolver<Enterprise> {
      * @date 2020/7/15
      */
     public Role getRole(Enterprise user) {
-        return Query.roleMap.get(user.getRoleId());
+        //return Query.roleMap.get(user.getRoleId());
+        throw new AppException("测试");
     }
 }
