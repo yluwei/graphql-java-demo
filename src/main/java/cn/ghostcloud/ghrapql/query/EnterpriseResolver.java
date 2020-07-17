@@ -24,7 +24,6 @@ public class EnterpriseResolver implements GraphQLResolver<Enterprise> {
      * @date 2020/7/15
      */
     public Role getRole(Enterprise user) {
-        //return Query.roleMap.get(user.getRoleId());
-        throw new AppException("测试");
+        return Query.roleMap.get(user.getRoleId());
     }
 }

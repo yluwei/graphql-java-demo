@@ -27,6 +27,8 @@ public class AppExceptionHandler implements GraphQLErrorHandler {
             ExceptionWhileDataFetching exceptionError = (ExceptionWhileDataFetching) error;
             if (exceptionError.getException() instanceof GraphQLError) {
                 return new GenericGraphQLError(exceptionError.getException().getMessage());
+            } else {
+                return new GenericGraphQLError("系统异常，请稍后重试");
             }
         }
         return error;
