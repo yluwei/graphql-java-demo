@@ -1,6 +1,5 @@
 package cn.ghostcloud.ghrapql.query;
 
-import cn.ghostcloud.ghrapql.common.AppException;
 import cn.ghostcloud.ghrapql.entity.Enterprise;
 import cn.ghostcloud.ghrapql.entity.Role;
 import com.coxautodev.graphql.tools.GraphQLResolver;
