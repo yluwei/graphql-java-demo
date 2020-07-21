@@ -2,6 +2,9 @@ package cn.ghostcloud.ghrapql.entity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * 个人
  *
@@ -9,7 +12,12 @@ import lombok.Data;
  * @date 2020/7/15
  */
 @Data
-public class Person extends User {
+@Entity
+public class Person implements Customer {
+    @Id
+    private Integer id;
+    private String name;
     private String idCard;
     private Integer age;
+    private Integer userId;
 }

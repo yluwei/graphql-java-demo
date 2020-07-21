@@ -6,16 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * 用户
+ * 资源
  *
  * @author yanluwei
- * @date 2020/7/15
+ * @date 2020/7/21
  */
 @Data
 @Entity
-public class User {
+public class Resource {
     @Id
     private Integer id;
-    private String username;
-    private Integer age;
+    private String name;
+    private String code;
 }

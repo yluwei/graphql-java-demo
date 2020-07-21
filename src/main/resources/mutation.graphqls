@@ -1,9 +1,0 @@
-# 变更入口，一个项目只能有一个变更入口，也就是说包含Mutation类型的文件至多只能有一个，可以没有
-type Mutation {
-    addUser(user: UserInput!) : User!
-}
-
-input UserInput{
-    username: String!
-    email: String
-}

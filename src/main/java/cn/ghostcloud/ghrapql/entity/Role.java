@@ -2,6 +2,9 @@ package cn.ghostcloud.ghrapql.entity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * 角色
  *
@@ -9,9 +12,9 @@ import lombok.Data;
  * @date 2020/7/15
  */
 @Data
+@Entity
 public class Role {
+    @Id
     private Integer id;
     private String name;
-    private String description;
-    private Integer roleType;
 }

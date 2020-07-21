@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Optional;
+import java.util.List;
 
 /**
  * 测试
@@ -24,8 +24,8 @@ public class TenantDaoTest {
     private TenantDao tenantDao;
 
     @Test
-    public void queryTenant(){
-        Tenant tenant = tenantDao.findById(1).orElse(null);
-        System.out.println(tenant);
+    public void queryTenant() {
+        List<Tenant> all = tenantDao.findAll();
+        System.out.println(all);
     }
 }

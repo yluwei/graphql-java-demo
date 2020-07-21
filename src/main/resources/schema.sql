@@ -1,22 +1,22 @@
-create table if not exists tanent (
+create table if not exists tenant (
   id int not null primary key auto_increment,
   name varchar(100),
   description varchar(100)
 );
 
-insert into tanent values (1,'企业文化部','负责企业文化建设');
-insert into tanent values (2,'投资管理部','定向投资，业务开拓');
+insert into tenant values (1,'企业文化部','负责企业文化建设');
+insert into tenant values (2,'投资管理部','定向投资，业务开拓');
 
-create table if not exists tanent_user (
+create table if not exists tenant_user (
   id int not null primary key auto_increment,
-  tanent_id int,
+  tenant_id int,
   user_id int
 );
 
-insert into tanent_user values (1,1,1);
-insert into tanent_user values (2,1,2);
-insert into tanent_user values (3,2,3);
-insert into tanent_user values (4,2,4);
+insert into tenant_user values (1,1,1);
+insert into tenant_user values (2,1,2);
+insert into tenant_user values (3,2,3);
+insert into tenant_user values (4,2,4);
 
 
 create table if not exists user (
