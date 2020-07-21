@@ -3,12 +3,23 @@ server:
   servlet:
     context-path: /
 
-#spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/dairy_queen?serverTimezone=GMT%2B8&characterEncoding=utf-8
-#    username: root
-#    password: 123456
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:sso;MODE=MySQL
+    username: sa
+    password: passwd
+    platform: h2
+    schema: classpath:schema.sql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
 
 logging:

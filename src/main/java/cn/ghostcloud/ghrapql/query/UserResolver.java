@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @author yanluwei
  * @date 2020/7/13
  */
-@Service
+//@Service
 public class UserResolver implements GraphQLResolver<User> {
 
     /**
