@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface UserDao extends JpaRepository<User, Integer> {
 
-    @Query(value = "select u.id,u.username,u.age from user u join tenant_user tu on u.id = tu.user_id " +
+    @Query(value = "select u.* from user u join tenant_user tu on u.id = tu.user_id " +
         "where tu.tenant_id = ?1", nativeQuery = true)
     List<User> listByTenant(Integer tenantId);
 }

@@ -18,4 +18,8 @@ public class User {
     private Integer id;
     private String username;
     private Integer age;
+    private String email;
+    private String phone;
+    private String intro;
+    private String address;
 }

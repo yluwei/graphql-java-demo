@@ -22,13 +22,17 @@ insert into tenant_user values (4,2,4);
 create table if not exists user (
   id int not null primary key auto_increment,
   username varchar(100),
-  age int
+  age int,
+  email varchar(100),
+  phone varchar(100),
+  intro varchar(100),
+  address varchar(100)
 );
 
-insert into user values (1,'张三',13);
-insert into user values (2,'李四',19);
-insert into user values (3,'高程',29);
-insert into user values (4,'薛岭',59);
+insert into user values (1,'张三',13,'109090@jk.com','13223232323','好的，我知道了','人州市上上村');
+insert into user values (2,'李四',19,'209090@jk.com','13223232323','好的，我知道了','毫安的发生');
+insert into user values (3,'高程',29,'309090@jk.com','134564564','好的，我知道了','垃圾疯狂');
+insert into user values (4,'薛岭',59,'787870@jk.com','12356798','好的，我知道了','湖州市是单例发');
 
 create table if not exists person (
   id int not null primary key auto_increment,

@@ -20,6 +20,10 @@ type User{
     id: Int!
     username: String!
     age: Int
+    email : String!
+    phone : String!
+    intro : String!
+    address : String!
     role: [Role]
     customer: [Customer]
 }
