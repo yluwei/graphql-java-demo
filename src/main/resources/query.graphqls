@@ -5,6 +5,8 @@ type Query {
     tenants: [Tenant]
     # 查询用户信息
     user(id: Int!): User
+    # 查询角色列表
+    roles: [Role]
 }
 
 # 租户

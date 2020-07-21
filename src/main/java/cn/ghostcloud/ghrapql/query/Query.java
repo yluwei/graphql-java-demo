@@ -1,7 +1,9 @@
 package cn.ghostcloud.ghrapql.query;
 
+import cn.ghostcloud.ghrapql.dao.RoleDao;
 import cn.ghostcloud.ghrapql.dao.TenantDao;
 import cn.ghostcloud.ghrapql.dao.UserDao;
+import cn.ghostcloud.ghrapql.entity.Role;
 import cn.ghostcloud.ghrapql.entity.Tenant;
 import cn.ghostcloud.ghrapql.entity.User;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
@@ -24,6 +26,8 @@ public class Query implements GraphQLQueryResolver {
     private TenantDao tenantDao;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private RoleDao roleDao;
 
     /**
      * 三种命名方式：
@@ -38,5 +42,9 @@ public class Query implements GraphQLQueryResolver {
      */
     public User getUser(Integer id) {
         return userDao.findById(id).orElse(null);
+    }
+
+    public List<Role> roles() {
+        return roleDao.findAll();
     }
 }
