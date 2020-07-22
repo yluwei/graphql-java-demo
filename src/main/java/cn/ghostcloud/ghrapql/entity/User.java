@@ -2,7 +2,6 @@ package cn.ghostcloud.ghrapql.entity;
 
 import lombok.Data;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
