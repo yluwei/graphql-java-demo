@@ -43,8 +43,8 @@ create table if not exists person (
 );
 
 insert into person values (1,'客户刘',99,'523623662336653',1);
-insert into person values (2,'李萌',77,'52362366123336653',1);
-insert into person values (3,'方正',11,'523623662dw336653',2);
+insert into person values (2,'李萌',77,'52362366123336653',3);
+insert into person values (3,'方正',11,'523623662dw336653',4);
 insert into person values (4,'筑起',22,'5236236623we36653',2);
 
 create table if not exists enterprise (
@@ -55,9 +55,9 @@ create table if not exists enterprise (
   user_id int
 );
 
-insert into enterprise values (1,'生鲜公司',100,'95656565623232',3);
+insert into enterprise values (1,'生鲜公司',100,'95656565623232',1);
 insert into enterprise values (2,'牛肉公司',1023,'1231dJJJJJ12312',3);
-insert into enterprise values (3,'大旗公司',2020,'95651223232',4);
+insert into enterprise values (3,'大旗公司',2020,'95651223232',2);
 insert into enterprise values (4,'流水公司',3636,'65464KKKKKKK',4);
 
 create table if not exists user_role (
