@@ -1,0 +1,14 @@
+type Mutation{
+    addUser(user: UserInput): User
+}
+
+Input UserInput{
+    tenantId: Int!
+    id: Int!
+    username: String!
+    age: Int
+    email : String!
+    phone : String!
+    intro : String!
+    address : String!
+}
