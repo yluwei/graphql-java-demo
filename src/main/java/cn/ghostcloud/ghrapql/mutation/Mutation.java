@@ -8,6 +8,7 @@ import cn.ghostcloud.ghrapql.input.UserInput;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * 变更
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author yanluwei
  * @date 2020/7/22
  */
+@Service
 public class Mutation implements GraphQLMutationResolver {
 
     @Autowired

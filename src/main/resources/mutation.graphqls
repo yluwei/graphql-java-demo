@@ -1,10 +1,9 @@
 type Mutation{
-    addUser(user: UserInput): User
+    addUser(user: UserInput!): User
 }
 
-Input UserInput{
+input UserInput{
     tenantId: Int!
-    id: Int!
     username: String!
     age: Int
     email : String!
