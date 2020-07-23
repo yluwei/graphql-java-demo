@@ -3,5 +3,5 @@
 - 数据库：h2数据库
 - ORM：jpa
 - 调试地址：/graphiql
-- 图形化文档地址:/voyager
+- 图形化文档地址: /voyager
 - 附件：演示PPT
